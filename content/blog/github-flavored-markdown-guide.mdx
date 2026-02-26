@@ -1,0 +1,774 @@
+---
+title: "GitHub Flavored Markdown (GFM): Complete Syntax Guide 2026"
+description: "Master GitHub Flavored Markdown with this complete guide. Learn tables, task lists, code blocks, and more with practical examples."
+publishedAt: "2026-02-01"
+updatedAt: "2026-02-26"
+keywords: ["github flavored markdown", "gfm", "github markdown", "markdown tables", "markdown task lists"]
+author: "markdowntohtml.net"
+category: "Tutorials"
+readTime: "12 min read"
+---
+
+# GitHub Flavored Markdown: Complete Syntax Guide
+
+GitHub Flavored Markdown (GFM) has become the de facto standard for Markdown on the web. Used by millions of developers daily on GitHub, GitLab, Stack Overflow, Discord, and more, GFM extends basic Markdown with powerful features like tables, task lists, and automatic URL linking.
+
+This guide covers everything you need to know about GFM.
+
+## What is GitHub Flavored Markdown?
+
+**GitHub Flavored Markdown (GFM)** is GitHub's dialect of Markdown, created to make writing on GitHub easier and more powerful. It adds features that developers need while maintaining Markdown's readability.
+
+### Why GFM Matters
+
+1. **Universal Standard** - Used across GitHub, GitLab, Discord, Reddit
+2. **Developer-Friendly** - Tables, code blocks, task lists
+3. **Widely Supported** - Most Markdown parsers support GFM
+4. **Backward Compatible** - All standard Markdown works in GFM
+
+## GFM vs Standard Markdown
+
+### Standard Markdown Has:
+- Headings, paragraphs, emphasis
+- Lists (ordered and unordered)
+- Links and images
+- Code (inline and blocks)
+- Blockquotes
+
+### GFM Adds:
+- ✅ **Tables**
+- ✅ **Task lists**
+- ✅ **Strikethrough**
+- ✅ **Automatic URL linking**
+- ✅ **Syntax highlighting**
+- ✅ **Emoji shortcodes**
+- ✅ **Username mentions**
+- ✅ **Issue references**
+
+## Tables
+
+One of GFM's most useful features is table support.
+
+### Basic Table
+
+```markdown
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+```
+
+**Renders as:**
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
+| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
+
+### Column Alignment
+
+Use colons (`:`) to align columns:
+
+```markdown
+| Left Aligned | Center Aligned | Right Aligned |
+|:-------------|:--------------:|--------------:|
+| Left | Center | Right |
+| Text | Text | Text |
+```
+
+**Renders as:**
+
+| Left Aligned | Center Aligned | Right Aligned |
+|:-------------|:--------------:|--------------:|
+| Left | Center | Right |
+| Text | Text | Text |
+
+- `:---` - Left aligned (default)
+- `:---:` - Center aligned
+- `---:` - Right aligned
+
+### Table Tips
+
+**1. Don't worry about perfect alignment in source:**
+
+```markdown
+| Header | Another Header |
+|---|---|
+| Short | This is a longer cell |
+| X | Y |
+```
+
+Still renders perfectly!
+
+**2. Use inline formatting:**
+
+```markdown
+| Name | Status | Notes |
+|------|--------|-------|
+| **Bold** | *Italic* | ~~Strikethrough~~ |
+| `Code` | [Link](url) | Regular text |
+```
+
+**3. Generate tables easily:**
+
+Instead of manually aligning pipes, use our [Markdown Table Generator](https://markdowntohtml.net/markdown-table-generator)!
+
+### Real-World Table Examples
+
+**Feature Comparison:**
+
+```markdown
+| Feature | Free Plan | Pro Plan | Enterprise |
+|---------|:---------:|:--------:|:----------:|
+| Users | 5 | 50 | Unlimited |
+| Storage | 10 GB | 100 GB | 1 TB |
+| Support | Community | Email | 24/7 Phone |
+| Price | $0 | $29/mo | Custom |
+```
+
+**API Endpoints:**
+
+```markdown
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/users` | List all users |
+| POST | `/api/users` | Create user |
+| PUT | `/api/users/:id` | Update user |
+| DELETE | `/api/users/:id` | Delete user |
+```
+
+## Task Lists
+
+Perfect for todos, checklists, and project tracking.
+
+### Basic Task List
+
+```markdown
+- [x] Completed task
+- [ ] Incomplete task
+- [ ] Another task
+```
+
+**Renders as:**
+
+- [x] Completed task
+- [ ] Incomplete task
+- [ ] Another task
+
+### Nested Task Lists
+
+```markdown
+- [x] Phase 1: Planning
+  - [x] Define requirements
+  - [x] Create timeline
+- [ ] Phase 2: Development
+  - [x] Setup environment
+  - [ ] Write code
+  - [ ] Write tests
+- [ ] Phase 3: Deployment
+```
+
+### Real-World Examples
+
+**Pull Request Checklist:**
+
+```markdown
+## Before Merging
+
+- [ ] Code reviewed by 2+ people
+- [ ] All tests passing
+- [ ] Documentation updated
+- [ ] Changelog updated
+- [ ] No merge conflicts
+```
+
+**Bug Fix Checklist:**
+
+```markdown
+## Bug #123 Fix
+
+- [x] Reproduce bug locally
+- [x] Identify root cause
+- [x] Write failing test
+- [x] Implement fix
+- [ ] Verify fix in staging
+- [ ] Update documentation
+```
+
+### Interactive on GitHub
+
+On GitHub Issues and PRs, task lists are **interactive** - you can check/uncheck boxes directly in the UI!
+
+## Strikethrough
+
+Cross out text using double tildes (`~~`):
+
+```markdown
+~~This text is crossed out~~
+This text is normal
+```
+
+**Renders as:**
+
+~~This text is crossed out~~
+This text is normal
+
+### Use Cases
+
+**Tracking changes:**
+
+```markdown
+~~Old plan: Launch in Q1~~
+**New plan:** Launch in Q2
+```
+
+**Deprecated features:**
+
+```markdown
+- ~~`oldFunction()`~~ - Deprecated, use `newFunction()`
+- `newFunction()` - Current API
+```
+
+## Code Blocks with Syntax Highlighting
+
+GFM adds syntax highlighting to fenced code blocks.
+
+### Basic Code Block
+
+````markdown
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+````
+
+**Renders with JavaScript highlighting:**
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+### Supported Languages
+
+GFM supports 100+ languages:
+
+````markdown
+```python
+def hello(name):
+    return f"Hello, {name}!"
+```
+
+```rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+```sql
+SELECT * FROM users WHERE active = true;
+```
+
+```bash
+#!/bin/bash
+echo "Hello, World!"
+```
+
+```json
+{
+  "name": "example",
+  "version": "1.0.0"
+}
+```
+````
+
+### No Highlighting
+
+Use `text` or no language:
+
+````markdown
+```text
+Plain text, no highlighting
+```
+````
+
+### Diff Highlighting
+
+Show code changes:
+
+````markdown
+```diff
+function calculate(a, b) {
+-  return a + b;
++  return a * b;
+}
+```
+````
+
+## Automatic URL Linking
+
+GFM automatically converts URLs to links:
+
+```markdown
+Visit https://github.com for more info.
+Email us at hello@example.com
+```
+
+**Renders as:**
+
+Visit https://github.com for more info.
+Email us at hello@example.com
+
+No need for `[text](url)` syntax!
+
+### When NOT to Use
+
+If you want to display a URL without linking:
+
+```markdown
+URL: `https://example.com` (won't be clickable)
+```
+
+## Emoji
+
+GFM supports emoji shortcodes:
+
+```markdown
+:smile: :heart: :+1: :tada: :rocket: :fire:
+```
+
+**Renders as:**
+
+😄 ❤️ 👍 🎉 🚀 🔥
+
+### Finding Emoji Codes
+
+- Full list: [GitHub Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+- Common ones: `:smile:` `:heart:` `:rocket:` `:fire:` `:bug:`
+
+### Use Cases
+
+**Issue comments:**
+
+```markdown
+Fixed! :tada: Thanks for reporting :+1:
+```
+
+**Commit messages:**
+
+```markdown
+:sparkles: Add new feature
+:bug: Fix login bug
+:books: Update docs
+```
+
+## GitHub-Specific Features
+
+These work on GitHub but may not work elsewhere:
+
+### 1. Username Mentions
+
+```markdown
+@username can you review this?
+```
+
+Notifies the user on GitHub.
+
+### 2. Issue/PR References
+
+```markdown
+Fixes #123
+Related to #456
+See PR #789
+```
+
+Auto-links to issues and PRs.
+
+### 3. Commit References
+
+```markdown
+Fixed in abc123def
+```
+
+Links to the commit.
+
+### 4. Repository References
+
+```markdown
+Check out user/repo#123
+See user/repo@abc123d
+```
+
+References issues/commits in other repos.
+
+## Advanced GFM Features
+
+### Footnotes
+
+Some GFM parsers support footnotes:
+
+```markdown
+Here's a sentence with a footnote[^1].
+
+[^1]: This is the footnote content.
+```
+
+### Definition Lists
+
+```markdown
+Term 1
+: Definition 1
+
+Term 2
+: Definition 2a
+: Definition 2b
+```
+
+### Collapsible Sections
+
+```markdown
+<details>
+<summary>Click to expand</summary>
+
+Hidden content here. Can include:
+- Markdown
+- **formatting**
+- `code`
+
+</details>
+```
+
+## Best Practices
+
+### 1. Use Tables for Structured Data
+
+**Bad:**
+```markdown
+Option A: 10GB storage, $5/month
+Option B: 100GB storage, $20/month
+Option C: 1TB storage, $50/month
+```
+
+**Good:**
+```markdown
+| Plan | Storage | Price |
+|------|---------|-------|
+| A | 10 GB | $5/mo |
+| B | 100 GB | $20/mo |
+| C | 1 TB | $50/mo |
+```
+
+### 2. Use Task Lists for Todos
+
+**Bad:**
+```markdown
+TODO:
+- Fix bug
+- Update docs
+- Write tests
+```
+
+**Good:**
+```markdown
+- [ ] Fix bug
+- [ ] Update docs
+- [ ] Write tests
+```
+
+### 3. Use Code Blocks with Language
+
+**Bad:**
+````markdown
+```
+function hello() {
+  console.log("Hello");
+}
+```
+````
+
+**Good:**
+````markdown
+```javascript
+function hello() {
+  console.log("Hello");
+}
+```
+````
+
+### 4. Use Strikethrough for Changes
+
+**Bad:**
+```markdown
+(OLD: Launch Q1) Launch Q2
+```
+
+**Good:**
+```markdown
+~~Launch Q1~~ Launch Q2
+```
+
+### 5. Link Issues/PRs in Commits
+
+**Bad:**
+```
+Fix the login bug
+```
+
+**Good:**
+```
+Fix login bug (#123)
+```
+
+## Common Gotchas
+
+### 1. Table Pipe Escaping
+
+If you need a literal pipe (`|`) in a table cell:
+
+```markdown
+| Code | Explanation |
+|------|-------------|
+| `a \| b` | Pipe in code |
+```
+
+Use `\|` to escape.
+
+### 2. Task List Spacing
+
+**Wrong:**
+```markdown
+-[x] Task
+```
+
+**Right:**
+```markdown
+- [x] Task
+```
+
+Space after `-` is required!
+
+### 3. Code Block Language
+
+Language names are case-insensitive but lowercase is convention:
+
+```markdown
+```JavaScript  ← Works but not standard
+```javascript  ← Standard
+```js          ← Also works
+```
+
+### 4. Nested Lists
+
+Need proper indentation (2 or 4 spaces):
+
+**Wrong:**
+```markdown
+- Item 1
+- Nested (no indent)
+```
+
+**Right:**
+```markdown
+- Item 1
+  - Nested (2 spaces)
+```
+
+## GFM Tools and Resources
+
+### Editors with GFM Support
+
+- **VS Code** - Built-in preview
+- **GitHub** - Native rendering
+- **Obsidian** - Full GFM support
+- **Typora** - WYSIWYG with GFM
+- **StackEdit** - Online GFM editor
+
+### Converters
+
+- [markdowntohtml.net](/) - HTML ↔ Markdown converter with GFM support
+- [Markdown Table Generator](https://markdowntohtml.net/markdown-table-generator) - Visual table creation
+- [Markdown Preview](https://markdowntohtml.net/markdown-preview) - Live GFM rendering
+
+### Libraries
+
+**JavaScript:**
+- [marked](https://marked.js.org/) - Fast Markdown parser with GFM
+- [remark-gfm](https://github.com/remarkjs/remark-gfm) - GFM plugin for remark
+
+**Python:**
+- [python-markdown](https://python-markdown.github.io/) - With GFM extension
+- [mistune](https://mistune.readthedocs.io/) - Fast Markdown parser
+
+**Ruby:**
+- [kramdown](https://kramdown.gettalong.org/) - With GFM parser
+- [redcarpet](https://github.com/vmg/redcarpet) - GitHub's own parser
+
+## Real-World Examples
+
+### README Template
+
+```markdown
+# Project Name
+
+Brief description of the project.
+
+## Features
+
+- [x] Feature 1
+- [x] Feature 2
+- [ ] Feature 3 (coming soon)
+
+## Installation
+
+```bash
+npm install project-name
+```
+
+## Usage
+
+```javascript
+import project from 'project-name';
+
+project.doSomething();
+```
+
+## API
+
+| Method | Description | Returns |
+|--------|-------------|---------|
+| `init()` | Initialize | `void` |
+| `run()` | Execute | `Promise<Result>` |
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## License
+
+MIT © [Author](https://github.com/author)
+```
+
+### Issue Template
+
+```markdown
+## Bug Report
+
+**Describe the bug**
+A clear description of the bug.
+
+**To Reproduce**
+1. Go to '...'
+2. Click on '...'
+3. See error
+
+**Expected behavior**
+What should happen.
+
+**Screenshots**
+If applicable.
+
+**Environment:**
+| Item | Version |
+|------|---------|
+| OS | macOS 12.0 |
+| Browser | Chrome 98 |
+| App Version | 1.2.3 |
+
+**Additional context**
+Any other info.
+```
+
+### PR Template
+
+```markdown
+## Changes
+
+Brief description of changes.
+
+### Checklist
+
+- [ ] Tests added/updated
+- [ ] Documentation updated
+- [ ] Changelog updated
+- [ ] No breaking changes
+- [ ] Reviewed by @teammate
+
+### Related Issues
+
+Fixes #123
+Related to #456
+```
+
+## Testing Your GFM
+
+### 1. GitHub Preview
+
+When writing on GitHub, click the "Preview" tab to see rendered output.
+
+### 2. Local Preview
+
+Use VS Code's built-in Markdown preview (`Ctrl+Shift+V`).
+
+### 3. Online Tools
+
+- [markdowntohtml.net/markdown-preview](https://markdowntohtml.net/markdown-preview) - Live GFM rendering
+- [GitHub Gist](https://gist.github.com) - Create a gist to test
+
+## Conclusion
+
+GitHub Flavored Markdown extends Markdown with essential features for developers:
+
+- **Tables** - For structured data
+- **Task lists** - For todos and checklists
+- **Code blocks** - With syntax highlighting
+- **Strikethrough** - For marking changes
+- **Auto-linking** - For URLs
+- **Emoji** - For fun and clarity
+
+Master these features to write better docs, issues, PRs, and READMEs.
+
+## Quick Reference Card
+
+```markdown
+# Tables
+| Header | Header |
+|--------|--------|
+| Cell   | Cell   |
+
+# Task Lists
+- [x] Done
+- [ ] Todo
+
+# Strikethrough
+~~deleted text~~
+
+# Code with Highlighting
+```javascript
+code here
+```
+
+# Auto-linking
+https://example.com
+
+# Emoji
+:smile: :rocket:
+
+# Mentions (GitHub)
+@username
+
+# Issues (GitHub)
+#123
+```
+
+---
+
+**Ready to use GFM?**
+- [Convert HTML to Markdown](https://markdowntohtml.net/html-to-markdown) with GFM support
+- [Generate Markdown tables](https://markdowntohtml.net/markdown-table-generator) visually
+- [Preview your Markdown](https://markdowntohtml.net/markdown-preview) with live rendering
+
+---
+
+*Written with GitHub Flavored Markdown* ✨

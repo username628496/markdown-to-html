@@ -1,0 +1,17 @@
+{
+  "name": "markdowntohtml.net - HTML ↔ Markdown Converter",
+  "short_name": "MD↔HTML",
+  "description": "Convert HTML to Markdown and Markdown to HTML instantly. Free, private, client-side processing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#E8FF5A",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

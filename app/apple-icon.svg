@@ -1,0 +1,14 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="#0D0D0D"/>
+
+  <!-- Left bracket - HTML (accent color) -->
+  <path d="M56 51L28 90L56 129" stroke="#E8FF5A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right bracket - HTML (accent color) -->
+  <path d="M124 51L152 90L124 129" stroke="#E8FF5A" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Bidirectional arrows - Conversion (white) -->
+  <path d="M68 73L90 90L68 107" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M112 73L90 90L112 107" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
