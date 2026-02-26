@@ -8,9 +8,9 @@ import Link from 'next/link';
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
 
 interface BlogPostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 interface FrontMatter {
@@ -56,7 +56,8 @@ async function getPost(slug: string) {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) {
     return {
@@ -78,7 +79,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
       publishedTime: frontMatter.publishedAt,
       modifiedTime: frontMatter.updatedAt || frontMatter.publishedAt,
       authors: [frontMatter.author],
-      url: `/blog/${params.slug}`,
+      url: `/blog/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -86,7 +87,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
       description: frontMatter.description,
     },
     alternates: {
-      canonical: `/blog/${params.slug}`,
+      canonical: `/blog/${slug}`,
     },
   };
 }
@@ -146,7 +147,8 @@ const components = {
 };
 
 export default async function BlogPostPage({ params }: BlogPostProps) {
-  const post = await getPost(params.slug);
+  const { slug } = await params;
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();
@@ -194,7 +196,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
             dateModified: frontMatter.updatedAt || frontMatter.publishedAt,
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': `https://markdowntohtml.net/blog/${params.slug}`,
+              '@id': `https://markdowntohtml.net/blog/${slug}`,
             },
             keywords: frontMatter.keywords.join(', '),
           }),
