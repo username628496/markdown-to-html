@@ -26,13 +26,13 @@ export default function AboutPage() {
             Our Mission
           </h2>
           <p className="text-[var(--text-secondary)] leading-relaxed">
-            We built markdowntohtml.net to provide free, reliable, and privacy-respecting tools for converting between HTML and Markdown formats. Whether you're a developer working with documentation, a content creator managing blog posts, or anyone who needs to convert markup formats, our tools are here to help.
+            We built markdowntohtml.net to provide free, reliable, and privacy-respecting tools for converting between HTML and Markdown formats. Whether you&apos;re a developer working with documentation, a content creator managing blog posts, or anyone who needs to convert markup formats, our tools are here to help.
           </p>
         </section>
 
         <section className="panel-elevated space-y-4">
           <h2 className="text-2xl font-display font-bold text-[var(--text-primary)]">
-            Why We're Different
+            Why We&apos;re Different
           </h2>
           <div className="space-y-4">
             <div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
                 100% Client-Side Processing
               </h3>
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                All conversions happen directly in your browser using JavaScript. Your content never touches our servers, never gets logged, and never leaves your device. We couldn't see your data even if we wanted to.
+                All conversions happen directly in your browser using JavaScript. Your content never touches our servers, never gets logged, and never leaves your device. We couldn&apos;t see your data even if we wanted to.
               </p>
             </div>
             <div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
             The Technology
           </h2>
           <p className="text-[var(--text-secondary)] leading-relaxed">
-            Built with Next.js 15, TypeScript, and Tailwind CSS. Hosted on Vercel's edge network for blazing-fast performance worldwide. We use:
+            Built with Next.js 15, TypeScript, and Tailwind CSS. Hosted on Vercel&apos;s edge network for blazing-fast performance worldwide. We use:
           </p>
           <ul className="list-disc list-inside text-[var(--text-secondary)] space-y-2">
             <li><strong>Turndown</strong> with GFM plugin for HTML to Markdown conversion</li>
@@ -90,7 +90,7 @@ export default function AboutPage() {
             Contact
           </h2>
           <p className="text-[var(--text-secondary)] leading-relaxed">
-            Have questions, feedback, or feature requests? We'd love to hear from you.
+            Have questions, feedback, or feature requests? We&apos;d love to hear from you.
           </p>
           <p className="text-[var(--text-secondary)]">
             Email: <a href="mailto:hello@markdowntohtml.net" className="text-[var(--accent)] hover:underline">hello@markdowntohtml.net</a>

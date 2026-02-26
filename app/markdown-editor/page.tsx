@@ -20,7 +20,7 @@ export default function MarkdownEditorPage() {
           Coming Soon
         </p>
         <p className="text-[var(--text-secondary)] leading-relaxed">
-          We're building a full-featured Markdown editor with formatting toolbar, keyboard shortcuts, and live preview.
+          We&apos;re building a full-featured Markdown editor with formatting toolbar, keyboard shortcuts, and live preview.
         </p>
         <div className="pt-6">
           <Link
