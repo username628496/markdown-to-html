@@ -6,9 +6,9 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
 import { platforms, getPlatformBySlug } from '@/lib/platforms';
 
 interface Props {
-  params: {
+  params: Promise<{
     'platform': string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -18,7 +18,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const platform = getPlatformBySlug(params.platform);
+  const { platform: platformSlug } = await params;
+  const platform = getPlatformBySlug(platformSlug);
 
   if (!platform) {
     return {
@@ -50,8 +51,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function PlatformConversionPage({ params }: Props) {
-  const platform = getPlatformBySlug(params.platform);
+export default async function PlatformConversionPage({ params }: Props) {
+  const { platform: platformSlug } = await params;
+  const platform = getPlatformBySlug(platformSlug);
 
   if (!platform) {
     notFound();
