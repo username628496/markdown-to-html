@@ -20,7 +20,7 @@
     "@codemirror/lang-html": "^6.4.9",
     "@codemirror/lang-markdown": "^6.3.0",
     "@codemirror/theme-one-dark": "^6.1.2",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.400.0"
   },
